@@ -1,4 +1,5 @@
 region = "us-east-1"
+
 create_vpc           = true
 cidr                 = "10.0.0.0/16"
 security_group = true
