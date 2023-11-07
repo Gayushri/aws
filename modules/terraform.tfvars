@@ -17,3 +17,7 @@ default_security_group_egress = [{
   to_port          = 0
   protocol         = "-1"
 }]
+
+private_subnets            = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+public_subnet_names        = ["pub1", "pub2", "pub3"]
+private_subnet_names       = ["pri1", "pri2", "pri3"]
