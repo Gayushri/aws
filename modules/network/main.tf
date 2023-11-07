@@ -1,5 +1,5 @@
 resource "aws_vpc" "vpc" {
-   cidr_block       = "var.use_ipam"
+   cidr_block       = "var.cidr"
  }
 
 resource "aws_security_group" "security_group" {
