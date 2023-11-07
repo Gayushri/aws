@@ -49,3 +49,9 @@ variable "private_subnet_names" {
    type        = list(string)
   default     = []
 }
+
+variable "s3_bucket_names" {
+   type        = list
+  default     = ["dev-bucket, uat-bucket, preprod-bucket"]
+}
+
