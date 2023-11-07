@@ -1,18 +1,10 @@
 resource "aws_iam_policy" "policy" {
-  name        = "test_policy"
-  path        = "/"
-  description = "My test policy"
+count = var.create_policy ? 1 : 0
 
-   policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "ec2:Describe*",
-        ]
-        Effect   = "Allow"
-        Resource = "*"
-      },
-    ]
-  })
-}
+name        = "var.name"
+  name_prefix = var.name_prefix
+  path        = var.path
+  description = "var.description"
+
+   policy = var.policy
+   }
