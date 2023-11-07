@@ -11,8 +11,7 @@ security_group_ingress = [{
 }]
 
 default_security_group_egress = [{
-  self             = true
-  cidr_blocks      = "0.0.0.0/0"
+    cidr_blocks      = "0.0.0.0/0"
   ipv4_cidr_blocks = ""
    from_port        = 0
   to_port          = 0
