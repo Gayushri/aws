@@ -1,9 +1,8 @@
 region = "us-east-1"
 create_vpc           = true
 cidr                 = "10.0.0.0/16"
-default_security_group = true
-default_security_group_ingress = [{
-  self             = true
+security_group = true
+security_group_ingress = [{
   cidr_blocks      = "0.0.0.0/0"
   ipv4_cidr_blocks = ""
   from_port        = 22
