@@ -1,19 +1,25 @@
+locals {
+  max_subnet_length = max(
+    length(var.private_subnets)
+
 resource "aws_vpc" "vpc" {
-   cidr_block       = "var.vpc_cidr"
+count = local.create_vpc ? 1 : 0
+cidr_block       = "var.vpc_cidr"
+azs = 
  }
 
 resource "aws_security_group" "security_group" {
-name = "security_group"
-vpc_id = aws_vpc.vpc.id
+  count = local.create_vpc && var.security_group ? 1 : 0
+  vpc_id = aws_vpc.vpc[0].id
 
   dynamic "ingress" {
-    for_each = var.security_group
+    for_each = var.security_group_ingress
     content {
-     
+     self = ingress.value
       from_port        = ingress.value
       to_port          = ingress.value
       protocol         = tcp   
-      cidr_blocks = ["0.0.0.0/10']
+      cidr_blocks = ["0.0.0.0/0']
     }
   }
 
