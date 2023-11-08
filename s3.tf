@@ -1,9 +1,18 @@
 resource "aws_s3_bucket" "rugg_buc" {
   count         =  length(var.s3_bucket_names)
   bucket        =  var.s3_bucket_names[count.index]
-  force_destroy = true
+  force_destroy =  var.force_destroy
+  acl           =  var.acl
+
 }
 
+
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  bucket = var.s3_bucket_names[0]
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
 resource "aws_iam_role" "example" {
   name = "example"
   assume_role_policy = jsonencode({
@@ -49,4 +58,5 @@ resource "aws_iam_role_policy_attachment" "some_bucket_policy" {
   role       = aws_iam_role.example.name
   policy_arn = aws_iam_policy.example.arn
 }
+
 
