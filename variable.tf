@@ -24,4 +24,13 @@ variable "role_name" {
   default = "example-role"
 }
 
+variable "acl" {
+  type        = string
+  default     = null
+}
+
+
+variable "force_destroy" {
+  type        = bool
+  default     = false
 
