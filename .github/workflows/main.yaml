@@ -1,9 +1,6 @@
-name: Terraform action
-on:
-  push:
-    branches:
-      - main
-  pull_request: null
+jobs:
+  build:
+    name: build
 permissions:
   id-token: write
   contents: read
