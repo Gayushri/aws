@@ -22,10 +22,10 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
       - name: Configure AWS credentials from AWS account
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: arn:aws:iam::841354735415:role/aws-github-actions
+          aws-region: ap-south-1
           role-session-name: aws-github-actions
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
