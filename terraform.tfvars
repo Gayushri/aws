@@ -1,3 +1,3 @@
-s3_bucket_names = ["devmine12", "prodmine12"]
+s3_bucket_names = ["devmine9", "prodmine09"]
 region          = "ap-south-1"
-table_name      = "terraform_lock"
+table_name      = "terraform_statelock"
