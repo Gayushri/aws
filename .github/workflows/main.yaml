@@ -1,6 +1,4 @@
-jobs:
-  build:
-    name: build
+name: Terraform action
 permissions:
   id-token: write
   contents: read
