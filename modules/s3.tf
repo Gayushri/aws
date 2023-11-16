@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "joger123" {
+resource "aws_s3_bucket" "joger143" {
   count         = length(var.s3_bucket_names)
   bucket        = var.s3_bucket_names[count.index]
   force_destroy = var.force_destroy
@@ -46,7 +46,7 @@ resource "aws_iam_policy" "example" {
         ],
         "Resource" : [
           "arn:aws:s3:::*/*",
-          "arn:aws:s3:::var.s3_bucket_names"
+          "arn:aws:s3:::var.s3_bucket_names[0]"
         ]
       }
     ]
@@ -57,4 +57,3 @@ resource "aws_iam_role_policy_attachment" "some_bucket_policy" {
   role       = aws_iam_role.example.name
   policy_arn = aws_iam_policy.example.arn
 }
-
