@@ -18,4 +18,7 @@ module "dynamodb_table" {
   source = "../../"
 }
 
+module "iam-openid-connect-provider" {
+   source = "../../"
+}
 
