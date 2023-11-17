@@ -7,7 +7,7 @@ on:
     types: [opened]
     branches:
       - infraterra
-environment:
+
   env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
