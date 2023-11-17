@@ -1,6 +1,10 @@
 name: Terraform action
 on:
   push:
+  pull_request:
+    types: [opened, assigned, reopened, synchronize]
+  issues:
+    types: [opened]
     branches:
       - infraterra
 permissions:
