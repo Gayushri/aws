@@ -30,8 +30,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::841354735415:role/S3access
-          aws-region: ap-south-1
-          
+          aws-region: ap-south-1  
       - run: aws sts get-caller-identity
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
