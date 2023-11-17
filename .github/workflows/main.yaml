@@ -26,11 +26,11 @@ jobs:
         uses: actions/checkout@v3
       - name: List files
         run: ls -a
-      - name: Configure AWS credentials from AWS account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::841354735415:role/S3access
-          aws-region: ap-south-1  
+      #- name: Configure AWS credentials from AWS account
+      # uses: aws-actions/configure-aws-credentials@v4
+      #  with:
+      #    role-to-assume: arn:aws:iam::841354735415:role/S3access
+       #   aws-region: ap-south-1  
       - run: aws sts get-caller-identity
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
