@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
+      - name: List files
+        run: ls -a
       - name: Configure AWS credentials from AWS account
         uses: aws-actions/configure-aws-credentials@v4
         with:
