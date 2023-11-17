@@ -7,7 +7,6 @@ on:
     types: [opened]
     branches:
       - infraterra
-  env:
 
 permissions:
   id-token: write
